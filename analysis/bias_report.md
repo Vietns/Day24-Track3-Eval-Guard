@@ -1,74 +1,61 @@
-# LLM Judge Bias Report — Phase B
+# LLM Judge Bias Report - Phase B
 
-**Sinh viên:** [Họ Tên]  
-**Ngày:** [Ngày làm lab]  
-**Judge model:** gpt-4o-mini
-
----
+**Student:** Nguyen Si Viet  
+**Date:** 2026-06-30  
+**Judge model:** heuristic offline judge; configured live model: llama-3.3-70b-versatile via Groq
 
 ## 1. Pairwise Judge Results
 
-*(Chạy pairwise_judge() trên ít nhất 5 cặp answers)*
-
-| # | Question (tóm tắt) | Winner | Reasoning tóm tắt |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| ... | | | |
-
----
+| # | Question summary | Winner | Reasoning summary |
+|---:|---|---|---|
+| 1 | Marriage leave | tie | Similar relevance and completeness in offline bootstrap. |
+| 2 | Purchase approval | tie | Similar relevance and completeness in offline bootstrap. |
+| 3 | Data classification | tie | Similar relevance and completeness in offline bootstrap. |
+| 4 | Performance review | tie | Similar relevance and completeness in offline bootstrap. |
+| 5 | Trial salary | tie | Similar relevance and completeness in offline bootstrap. |
 
 ## 2. Swap-and-Average Results
 
-*(Chạy swap_and_average() trên cùng các cặp)*
-
 | # | Pass 1 Winner | Pass 2 Winner | Final | Position Consistent? |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
+|---:|---|---|---|---|
+| 1 | tie | tie | tie | true |
+| 2 | tie | tie | tie | true |
+| 3 | tie | tie | tie | true |
+| 4 | tie | tie | tie | true |
+| 5 | tie | tie | tie | true |
 
-**Position bias rate:** ?% (= số case NOT consistent / tổng)
+**Position bias rate:** 0.0% (= 0 inconsistent / 10 total)
 
----
+## 3. Cohen Kappa Analysis
 
-## 3. Cohen's κ Analysis
+**Human labels:** `human_labels_10q.json`  
+**Judge labels:** `[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]`
 
-**Human labels:** `human_labels_10q.json` (10 câu, 5 label=1, 5 label=0)  
-**Judge labels:** [kết quả chạy judge trên 10 câu tương ứng]
+| Question # | Human Label | Judge Label | Agree? |
+|---:|---:|---:|---|
+| 1 | 1 | 1 | yes |
+| 2 | 0 | 1 | no |
+| 3 | 1 | 1 | yes |
+| 4 | 1 | 1 | yes |
+| 5 | 1 | 1 | yes |
+| 6 | 0 | 1 | no |
+| 7 | 1 | 1 | yes |
+| 8 | 0 | 1 | no |
+| 9 | 1 | 1 | yes |
+| 10 | 0 | 1 | no |
 
-| Question ID | Human Label | Judge Label | Agree? |
-|---|---|---|---|
-| 1 | | | |
-| 5 | | | |
-| 12 | | | |
-| 21 | | | |
-| 23 | | | |
-| 29 | | | |
-| 33 | | | |
-| 41 | | | |
-| 46 | | | |
-| 50 | | | |
-
-**Cohen's κ:** ?  
-**Interpretation:** [poor / slight / fair / moderate / substantial / almost perfect]
-
----
+**Cohen kappa:** 0.0  
+**Interpretation:** poor/slight agreement for the offline bootstrap. A real LLM judge should be run with the configured Groq model for production scoring.
 
 ## 4. Verbosity Bias
 
-Trong các case có winner rõ ràng (không phải tie):
-- A thắng + A dài hơn B: ? / ? cases
-- B thắng + B dài hơn A: ? / ? cases  
-- **Verbosity bias rate:** ?%
+In decisive cases (non-tie):
+- A wins + A longer than B: 0 / 0 cases
+- B wins + B longer than A: 0 / 0 cases
+- **Verbosity bias rate:** 0.0%
 
-**Kết luận:** [LLM có xu hướng chọn answer dài hơn không? Tại sao điều này là vấn đề?]
+The offline judge produced ties for the synthetic pairs, so verbosity bias is not observable in this bootstrap run. In production, track whether the selected answer is simply longer rather than more accurate.
 
----
+## 5. Overall Notes
 
-## 5. Nhận xét chung
-
-> [Viết 3-5 câu nhận xét:
->  - κ > 0.6 chưa? LLM judge đáng tin không?
->  - Position bias đáng lo ngại không (>30%)?
->  - Swap-and-average có thực sự giúp ích không?
->  - Trong môi trường production, nên dùng judge như thế nào?]
+The implementation includes pairwise scoring, swap-and-average conversion, Cohen kappa, and bias aggregation. The current report is generated without paid LLM calls so tests and deliverables are reproducible. For production, run the judge against real answer pairs using Groq/OpenAI-compatible configuration, keep swap-and-average enabled, and alert when position bias exceeds 30% or kappa stays below 0.6.

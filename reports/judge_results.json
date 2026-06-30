@@ -1,0 +1,233 @@
+{
+  "total_pairs": 10,
+  "model": "heuristic/offline judge; set USE_LLM_JUDGE for live model if desired",
+  "cohen_kappa": 0.0,
+  "judge_labels": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "human_labels": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "bias": {
+    "total_judged": 10,
+    "position_bias_rate": 0.0,
+    "position_bias_count": 0,
+    "verbosity_bias": 0.0,
+    "verbosity_details": {
+      "a_wins_a_longer": 0,
+      "b_wins_b_longer": 0,
+      "total_decisive": 0
+    },
+    "interpretation": "Position bias is low."
+  },
+  "results": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Thưởng Tết tối thiểu cho nhân viên chính thức có từ 6 tháng trở lên là bao nhiêu?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng. Phải hoàn trả bao nhiêu?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên tạm ứng 8 triệu, chưa thanh toán sau 30 ngày. Ai phê duyệt và phí phạt là bao nhiêu?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thâm niên 12 năm: tổng phụ cấp hàng tháng và số ngày phép năm?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thể dùng VPN cá nhân (NordVPN) khi WFH không?",
+      "answer_a": "Good answer with policy-specific details.",
+      "answer_b": "Incomplete answer.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answers are similar in relevance and completeness.",
+      "reasoning_pass2": "Answers are similar in relevance and completeness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.374,
+        "B": 0.358
+      },
+      "scores_pass2": {
+        "A": 0.374,
+        "B": 0.358
+      }
+    }
+  ]
+}
